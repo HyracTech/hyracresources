@@ -21,7 +21,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: $8d61062a000a7a92f28f2746528cab101f7d2423
+  github_token: $GITHUB_TOKEN
   local_dir: dist/hyracresources
   on:
     branch: master
