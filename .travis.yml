@@ -15,8 +15,8 @@ before_script:
 
 script:
   - ng build --prod --aot
-  - ng test
-  
+
+
 deploy:
   provider: pages
   skip_cleanup: true
