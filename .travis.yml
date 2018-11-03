@@ -18,7 +18,7 @@ cache:
     - node_modules
 
 script:
-  - ng build --prod --base-href /
+  - ng build --prod --base-href=/hyracresources/
 
 
 deploy:
