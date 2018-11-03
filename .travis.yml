@@ -20,7 +20,7 @@ before_script:
 
 script:
   - yarn lint
-  - yarn build --base-href https://[ HyracTech ].github.io/hyracresources/
+  - yarn build --base-href https://github.com/HyracTech/hyracresources
 deploy:
   provider: pages
   skip_cleanup: true
