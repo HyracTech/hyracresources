@@ -1,23 +1,22 @@
+sudo: required
+addons:
+  chrome: stable
+
 language: node_js
 node_js:
-  - node
-dist: trusty
-sudo: false
+  - "8"
 
 branches:
   only:
-  - master
-
-
-install:
-  - npm install -g yarn
+    - master
 
 before_script:
-  - npm install -g --silent @angular/cli
+  - npm install -g @angular/cli
 
 script:
-  - yarn lint
-  - yarn build --base-href https://github.com/HyracTech/hyracresources
+  - ng build --prod --aot
+  - ng test
+  
 deploy:
   provider: pages
   skip_cleanup: true
