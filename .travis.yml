@@ -1,25 +1,30 @@
-sudo: required
-addons:
-  chrome: stable
-
 language: node_js
 node_js:
-  - "8"
+ - "8.11.3"
 
 branches:
   only:
     - master
 
+addons:
+  chrome: stable
+
 before_script:
-  - npm install -g @angular/cli
+  - yarn global add @angular/cli
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
 script:
-  - ng build --prod --base-href /
+  - ng build --prod
+
 
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist/hyracresources
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  local-dir: ./dist/hyracresources
   on:
-    branch: master
