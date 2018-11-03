@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - "8.11.3"
+dist: trusty
+sudo: false
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g yarn
+
+script:
+  - yarn lint
+  - yarn build --base-href https://[ HyracTech ].github.io/hyracresources/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $8d61062a000a7a92f28f2746528cab101f7d2423
+  local_dir: dist/hyracresources
+  on:
+    branch: master
